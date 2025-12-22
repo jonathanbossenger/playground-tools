@@ -72,4 +72,4 @@ jobs:
                   git config --global user.name "deployment_bot"
                   git config --global user.email "deployment_bot@users.noreply.github.com"
                   git commit -a -m "Playground Block: Version bump "$NEXT_TAG --no-verify
-                  git push git@github.com:wordpress/playground-tools.git --follow-tags
+                  git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/wordpress/playground-tools.git HEAD:trunk --follow-tags
