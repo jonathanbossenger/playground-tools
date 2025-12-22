@@ -28,6 +28,8 @@ jobs:
               uses: webfactory/ssh-agent@v0.5.3
               with:
                   ssh-private-key: ${{ secrets.GH_DEPLOY_KEY }}
+            - name: Install SVN
+              run: sudo apt-get update && sudo apt-get install -y subversion
             - name: Clone the SVN repo
               run: |
                   mkdir -p svn-clone
